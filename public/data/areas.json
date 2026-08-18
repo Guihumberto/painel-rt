@@ -1,0 +1,23 @@
+[
+  { "id": "cegat", "sigla": "CEGAT", "nome": "Célula de Gestão para Administração Tributária", "descricao": "Área de Controle e Planejamento da Tributação" },
+  { "id": "upcaf", "sigla": "UPCAF", "nome": "Fiscalização, Trânsito e COE", "descricao": "Unidade de Planejamento e Coordenação da Ação Fiscal" },
+  { "id": "unipi", "sigla": "UNIPI", "nome": "Inteligência Fiscal", "descricao": "Núcleo de Inteligência e Pesquisa de Informações" },
+  { "id": "neef", "sigla": "NEEF", "nome": "Núcleo de Estudos Econômico-Fiscais", "descricao": "Estudos econômicos e estimativas de arrecadação" },
+  { "id": "cadastro", "sigla": "CADASTRO", "nome": "Cadastro", "descricao": "Gestão do cadastro de contribuintes" },
+  { "id": "cotea-ipva", "sigla": "COTEA-IPVA", "nome": "Coordenadoria de Tributação — IPVA", "descricao": "Tributação sobre veículos automotores" },
+  { "id": "cotea-itcd", "sigla": "COTEA-ITCD", "nome": "Coordenadoria de Tributação — ITCD", "descricao": "Tributação sobre transmissão causa mortis e doação" },
+  { "id": "naic", "sigla": "NAIC", "nome": "Núcleo de Assistência Integral ao Contribuinte", "descricao": "Orientação e atendimento ao contribuinte" },
+  { "id": "cegaf-agencias", "sigla": "CEGAF-AG", "nome": "Área de Atendimento às Agências", "descricao": "Coordenação das Agências de Atendimento" },
+  { "id": "cegaf-cobranca", "sigla": "CEGAF-COB", "nome": "Cobrança Administrativa", "descricao": "Cobrança administrativa do crédito tributário" },
+  { "id": "cotec", "sigla": "COTEC", "nome": "Corpo Técnico para Tecnologia da Informação", "descricao": "Sistemas, dados e infraestrutura tecnológica" },
+  { "id": "cotrh", "sigla": "COTRH", "nome": "Gestão de Pessoas — Treinamento", "descricao": "Capacitação e desenvolvimento de servidores" },
+  { "id": "asjur", "sigla": "ASJUR", "nome": "Assessoria Jurídica", "descricao": "Consultoria e defesa jurídica institucional" },
+  { "id": "csl", "sigla": "CSL", "nome": "Comissão Setorial de Licitação", "descricao": "Licitações e contratações administrativas" },
+  { "id": "ipm", "sigla": "IPM", "nome": "Índice dos Municípios", "descricao": "Apuração do índice de participação dos municípios" },
+  { "id": "asdin", "sigla": "ASDIN", "nome": "Assessoria de Desenvolvimento Institucional", "descricao": "Comunicação institucional e relações federativas" },
+  { "id": "ngsn", "sigla": "NGSN", "nome": "Núcleo Gestor do Simples Nacional", "descricao": "Gestão do regime do Simples Nacional" },
+  { "id": "aspro", "sigla": "ASPRO", "nome": "Assessoria de Projetos", "descricao": "Planejamento estratégico e projetos institucionais" },
+  { "id": "tarf", "sigla": "TARF", "nome": "Tribunal Administrativo de Recursos Fiscais", "descricao": "Contencioso administrativo tributário" },
+  { "id": "cegpa", "sigla": "CEGPA", "nome": "Célula de Gestão de Pessoas e Administração", "descricao": "Gestão administrativa, contratos e orçamento" },
+  { "id": "asrhu", "sigla": "ASRHU", "nome": "Assessoria de Gestão de Pessoas", "descricao": "Dimensionamento e estrutura de força de trabalho" }
+]

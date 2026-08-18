@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23223142'/><text x='50' y='68' font-size='58' font-family='Georgia,serif' fill='%23e8c375' text-anchor='middle'>P</text></svg>" />
+    <script>
+      // Aplica o tema salvo antes do CSS/Vue carregar, pra não piscar claro
+      // por uma fração de segundo quando o usuário já escolheu escuro.
+      try {
+        var temaSalvo = localStorage.getItem('painel-rt:tema');
+        if (temaSalvo === 'claro' || temaSalvo === 'escuro') {
+          document.documentElement.setAttribute('data-theme', temaSalvo);
+        }
+      } catch (e) {}
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel de Governança — CTRT · Comitê Técnico da Reforma Tributária</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

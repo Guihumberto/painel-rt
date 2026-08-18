@@ -1,0 +1,14 @@
+[build]
+  command = "pnpm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+# SPA com Vue Router em modo history: sem isso, acessar /eventos/:id direto
+# (ou dar F5 numa rota) devolve 404 do Netlify, porque só index.html existe
+# como arquivo — o resto do roteamento acontece no JS, no navegador.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
