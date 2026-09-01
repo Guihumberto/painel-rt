@@ -3,19 +3,15 @@ import { computed } from 'vue'
 import type { Evento } from '@/types/event'
 import type { Atividade } from '@/types/activity'
 import { useAreasStore } from '@/stores/areas'
-import { diasRestantesEvento, estadoTemporalEvento } from '@/composables/useEventoData'
+import { diasRestantesEvento, estadoTemporalEvento, partesDataEvento } from '@/composables/useEventoData'
 
 const props = defineProps<{ evento: Evento; pauta: Atividade[] }>()
 
 const areasStore = useAreasStore()
 
-const dataEvento = computed(() => new Date(`${props.evento.data}T12:00:00`))
 const diasRestantes = computed(() => diasRestantesEvento(props.evento.data))
 const estado = computed(() => estadoTemporalEvento(diasRestantes.value))
-
-const dia = computed(() => new Intl.DateTimeFormat('pt-BR', { day: '2-digit' }).format(dataEvento.value))
-const mes = computed(() => new Intl.DateTimeFormat('pt-BR', { month: 'short' }).format(dataEvento.value).replace('.', ''))
-const ano = computed(() => dataEvento.value.getFullYear())
+const partes = computed(() => partesDataEvento(props.evento.data))
 
 const rotuloContagem = computed(() => {
   if (diasRestantes.value === 0) return 'hoje'
@@ -35,12 +31,12 @@ function siglaDe(atividade: Atividade): string {
         <!-- bloco de data: âncora visual do card, mesmo par ink+latão do mastro e do placar -->
         <div class="flex shrink-0 flex-col items-center justify-center gap-0.5 rounded-sm bg-brand px-3.5 py-2.5">
           <span class="font-display text-4xl font-black leading-none tabular-nums text-brass sm:text-5xl">
-            {{ dia }}
+            {{ partes.dia }}
           </span>
           <span class="font-mono text-[10px] font-semibold uppercase tracking-[0.15em] text-on-brand/70">
-            {{ mes }}
+            {{ partes.mes }}
           </span>
-          <span class="font-mono text-[9px] text-on-brand/40">{{ ano }}</span>
+          <span class="font-mono text-[9px] text-on-brand/40">{{ partes.ano }}</span>
         </div>
 
         <div class="min-w-0 flex-1">

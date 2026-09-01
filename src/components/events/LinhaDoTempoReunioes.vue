@@ -14,13 +14,15 @@ function dataCurta(dataIso: string): string {
 
 function rotulo(evento: Evento): string {
   if (evento.id === props.proximaId) return 'Próxima'
+  if (evento.status === 'suspenso') return 'Suspensa'
   return evento.status === 'realizado' ? 'Realizada' : 'Agendada'
 }
 
-/** Estilo do marcador na régua: anel latão vazado = você está aqui; latão cheio = próxima; neutro = já realizada. */
+/** Estilo do marcador na régua: anel latão vazado = você está aqui; latão cheio = próxima; vermelho = suspensa; neutro = já realizada. */
 function pontoClasse(evento: Evento): string {
   if (evento.id === props.atualId) return 'border-brass bg-card'
   if (evento.id === props.proximaId) return 'border-brass bg-brass'
+  if (evento.status === 'suspenso') return 'border-status-critical bg-status-critical-bg'
   return 'border-line bg-paper-dim'
 }
 </script>
@@ -62,7 +64,11 @@ function pontoClasse(evento: Evento): string {
             </div>
             <span
               class="shrink-0 rounded-chip px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide"
-              :class="evento.id === proximaId ? 'bg-brass/15 text-brass-ink' : 'bg-paper-dim text-ink-soft'"
+              :class="{
+                'bg-brass/15 text-brass-ink': evento.id === proximaId,
+                'bg-status-critical-bg text-status-critical': evento.id !== proximaId && evento.status === 'suspenso',
+                'bg-paper-dim text-ink-soft': evento.id !== proximaId && evento.status !== 'suspenso',
+              }"
             >
               {{ rotulo(evento) }}
             </span>

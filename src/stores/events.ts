@@ -26,9 +26,10 @@ export const useEventsStore = defineStore('events', () => {
       .sort((a, b) => (a.data < b.data ? -1 : 1)),
   )
 
+  /** Realizado ou suspenso — os dois "já não estão por vir", então entram no histórico. */
   const passados = computed(() =>
     eventos.value
-      .filter((e) => e.status === 'realizado')
+      .filter((e) => e.status === 'realizado' || e.status === 'suspenso')
       .sort((a, b) => (a.data > b.data ? -1 : 1)),
   )
 

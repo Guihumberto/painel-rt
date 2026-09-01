@@ -13,3 +13,26 @@ export function estadoTemporalEvento(diasRestantes: number): EstadoTemporalEvent
   if (diasRestantes === 0) return 'hoje'
   return diasRestantes > 0 ? 'futuro' : 'passado'
 }
+
+export interface PartesDataEvento {
+  dia: string
+  mes: string
+  ano: number
+}
+
+/** Dia/mês/ano soltos — alimenta o bloco de data ink+latão (o "carimbo") reaproveitado em vários lugares. */
+export function partesDataEvento(dataIso: string): PartesDataEvento {
+  const data = new Date(`${dataIso}T12:00:00`)
+  return {
+    dia: new Intl.DateTimeFormat('pt-BR', { day: '2-digit' }).format(data),
+    mes: new Intl.DateTimeFormat('pt-BR', { month: 'short' }).format(data).replace('.', ''),
+    ano: data.getFullYear(),
+  }
+}
+
+/** Data por extenso, ex.: "terça-feira, 01 de setembro de 2026". */
+export function dataExtensaEvento(dataIso: string): string {
+  return new Intl.DateTimeFormat('pt-BR', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' }).format(
+    new Date(`${dataIso}T12:00:00`),
+  )
+}

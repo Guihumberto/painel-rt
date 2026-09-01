@@ -9,10 +9,11 @@ import type { Evento } from '@/types/event'
  *
  * Já a série de Reuniões Ordinárias do CTRT tem pauta fixa, com assunto e
  * responsável nomeados — por isso usa `assuntos`/`informes` em vez de
- * `atividadesIds`. As reuniões nº 12 e 13 ficam com `status: 'realizado'`
- * para dar histórico de verdade à série (mesmo `tipo`), que
- * `EventoDetalheView` usa para listar "próxima" vs. "já ocorreu" — regra:
- * inscrição só é permitida em reunião agendada.
+ * `atividadesIds`. A nº 12 ficou `status: 'realizado'` e a nº 13 foi
+ * suspensa (`status: 'suspenso'`, não chegou a acontecer) — dão histórico de
+ * verdade à série (mesmo `tipo`), que `EventoDetalheView` e
+ * `LinhaDoTempoReunioes` usam pra distinguir "próxima" de "já ocorreu" de
+ * "suspensa" — regra: inscrição só é permitida em reunião agendada.
  */
 export const eventos: Evento[] = [
   {
@@ -59,8 +60,8 @@ export const eventos: Evento[] = [
     local: 'Salas de Aula 01 e 02',
     modalidade: 'Presencial',
     publicoAlvo: 'Secretário de Estado da Fazenda, gestores, servidores e integrantes do Encat.',
-    descricao: 'Reunião ordinária do Comitê Técnico da Reforma Tributária (CTRT/SEFAZ).',
-    status: 'realizado',
+    descricao: 'Reunião ordinária do Comitê Técnico da Reforma Tributária (CTRT/SEFAZ) — suspensa e reagendada.',
+    status: 'suspenso',
     assuntos: [
       {
         ordem: 1,
@@ -93,8 +94,8 @@ export const eventos: Evento[] = [
     titulo: 'Reunião Ordinária nº 14/2026 — CTRT',
     tipo: 'Reunião ordinária',
     numero: '14/2026',
-    data: '2026-08-18',
-    hora: '16h30',
+    data: '2026-09-01',
+    hora: '15h00',
     local: 'Salas de Aula 01 e 02',
     modalidade: 'Presencial',
     publicoAlvo: 'Secretário de Estado da Fazenda, gestores, servidores e integrantes do Encat.',
@@ -103,27 +104,32 @@ export const eventos: Evento[] = [
     assuntos: [
       {
         ordem: 1,
-        titulo: 'Análise da saída do Estado de São Paulo da Substituição Tributária',
-        responsavel: 'André Massa',
-      },
-      {
-        ordem: 2,
         titulo:
           'Reporte sobre Visita Técnica e Imersão nos Sistemas do IBS e Integração com a CBS na SEFAZ-RS / PROCERGS',
         responsavel: 'Luciano Dutra',
       },
       {
+        ordem: 2,
+        titulo: 'Análise da saída do Estado de São Paulo da Substituição Tributária',
+        responsavel: 'André Massa',
+      },
+      {
         ordem: 3,
+        titulo: 'Reporte do GT 04 — COMSEFAZ — Fundo Nacional de Desenvolvimento Regional',
+        responsavel: 'Jorge Castro',
+      },
+      {
+        ordem: 4,
         titulo: 'Impactos da Reforma Tributária no Comércio Exterior',
         responsavel: 'Marcelo Queiroz',
       },
       {
-        ordem: 4,
+        ordem: 5,
         titulo: 'Atualizações sobre organização do Seminário sobre a Reforma Tributária',
         responsavel: 'Comissão de Organização',
       },
       {
-        ordem: 5,
+        ordem: 6,
         titulo:
           'Apresentação de Painel de Monitoramento e Controle do CTRT das ações previstas nos planos operativos',
         responsavel: 'Coordenação Executiva — Humberto',
@@ -131,9 +137,8 @@ export const eventos: Evento[] = [
     ],
     informes: [
       'Quantitativo de respostas por perfil dos formulários do Diagnóstico de Preparação Institucional da Reforma Tributária do Consumo — Iolanda Barbosa.',
-      'Curso Básico sobre a Reforma Tributária para servidores — data: 25 e 26 de agosto.',
-      'Curso sobre a Reforma Tributária para a sociedade — data: 03/09 a 25/11.',
-      'Grupo de Estudo — data: 27/08 — tema "Comitê Gestor do Imposto sobre Bens e Serviços: Art. 25 ao 53 da Lei Complementar nº 227/2026", com exposição de Diego Secchin.',
+      'Curso Básico sobre a Reforma Tributária para servidores.',
+      'Curso sobre a Reforma Tributária para a sociedade.',
     ],
   },
   {

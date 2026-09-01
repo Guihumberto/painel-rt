@@ -26,13 +26,13 @@ function areaDe(atividade: Atividade) {
       <div class="flex items-center gap-2">
         <span
           class="rounded-chip px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide"
-          :class="
-            evento.status === 'agendado'
-              ? 'bg-brass/15 text-brass-ink'
-              : 'bg-paper-dim text-ink-soft'
-          "
+          :class="{
+            'bg-brass/15 text-brass-ink': evento.status === 'agendado',
+            'bg-status-critical-bg text-status-critical': evento.status === 'suspenso',
+            'bg-paper-dim text-ink-soft': evento.status === 'realizado',
+          }"
         >
-          {{ evento.status === 'agendado' ? 'Agendado' : 'Realizado' }}
+          {{ evento.status === 'agendado' ? 'Agendado' : evento.status === 'suspenso' ? 'Suspenso' : 'Realizado' }}
         </span>
         <span class="font-mono text-xs uppercase tracking-widest text-ink-soft">{{ evento.tipo }}</span>
       </div>

@@ -1,4 +1,4 @@
-export type EventoStatus = 'agendado' | 'realizado'
+export type EventoStatus = 'agendado' | 'realizado' | 'suspenso'
 
 /** Item de pauta com responsável nomeado — reuniões de comitê (ex.: CTRT), não seminários. */
 export interface AssuntoPauta {
